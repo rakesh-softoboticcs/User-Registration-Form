@@ -1,0 +1,35 @@
+<div class="container-fluid">
+  
+  <h1 class="text-center">Welcome to Login Page</h1>
+  
+  <form [formGroup]="login" (ngSubmit)="onLogin()">
+    
+      <p class="border  p-3 w-50 rounded text-danger  m-3 b-color" *ngIf="login.errors?.['unauthenticated']">UserName or Password incorrect</p>
+    
+    
+
+    <!-- User Name -->
+    <div class="form-group  mt-3">
+      <label for="">Username</label>
+      <input [class.is-invalid]=" userName?.invalid && userName?.touched" formControlName="userName" type="text"
+        class="form-control">
+      <div *ngIf="userName?.invalid && userName?.touched" class="invalid-feedback">
+        <small *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
+      </div>
+    </div>
+
+    <!-- Password -->
+
+    <div class="form-group  mt-3">
+      <label for="">Password</label>
+      <input [class.is-invalid]=" password?.invalid && password?.touched" formControlName="password" type="password"
+        class="form-control">
+      <div *ngIf=" password?.invalid && password?.touched" class="invalid-feedback">
+        <small *ngIf="password?.errors?.['required']" class="text-danger">Password is required</small>
+      </div>
+    </div>
+    
+    <button [disabled]="!login.valid" class="btn btn-primary m-3" type="submit">Login</button>
+    <button class="btn btn-primary m-3" (click)="onNavigate()">Register</button>
+  </form>
+</div>

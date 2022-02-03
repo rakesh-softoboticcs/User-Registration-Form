@@ -1,0 +1,25 @@
+<h1>Welcome to Todo Users</h1>
+<hr>
+<button class="btn btn-primary" (click)="onHomePage()">Home Page</button>
+<hr>
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Completed</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr scope="row" *ngFor="let user of users"
+            [ngStyle]="{'background-color':(user.completed===true)? 'rgba(0,100,0,0.8)': 'rgba(100,0,0,0.8)'}">
+
+            <td>{{user.userId}}</td>
+            <td>{{user.id}}</td>
+            <td>{{user.title}}</td>
+            <td>{{user.completed}}</td>
+        </tr>
+    </tbody>
+</table>

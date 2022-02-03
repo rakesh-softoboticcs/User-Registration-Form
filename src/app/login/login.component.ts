@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { UserService } from './../user.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -23,7 +24,8 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private _userService: UserService
+    private _userService: UserService,
+    private cookie:CookieService
   ) {}
 
   ngOnInit(): void {
@@ -38,15 +40,27 @@ export class LoginComponent implements OnInit {
     const pwd = this.login.get('password')?.value;
 
     let result = this._userService.login(uName, pwd);
+    console.log(result);
+    let date = new Date();
+    let expire = date.getDate()+0.5;
+
+
+    this.cookie.set('userName',uName,expire);
+    this.cookie.set('password',pwd,expire);
+    // let usersArr=JSON.parse(localStorage.getItem('Users') || '{}')
+
+    // let users=JSON.stringify(usersArr);
+
+    // console.log(users);
+
+    
+    // this.cookie.set("Value",users,new Date(2022,1,1));
+
 
     if (result) {
       this.router.navigate(['/homepage']);
     } else {
       this.login.setErrors({ unauthenticated: true });
     }
-  }
-
-  onNavigate() {
-    this.router.navigate(['/register']);
   }
 }

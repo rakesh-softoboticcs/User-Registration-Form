@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class RegistrationComponent implements OnInit {
   registrationForm: any = FormGroup;
+  user: any = {};
 
   get firstName() {
     return this.registrationForm.get('firstName');
@@ -59,6 +60,7 @@ export class RegistrationComponent implements OnInit {
             this._customValidation.checkUserNameValidator.bind(this),
           ],
         ],
+        gender: [''],
         email: [
           '',
           [
@@ -82,16 +84,18 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit(data: any) {
+    console.log(data);
+
     this._userService.register(data);
 
     this.router.navigate(['/success-page']);
+    this.user = Object.assign(this.user, data);
+    this._userService.localStorageUser(this.user);
   }
 
   onReset() {
     this.registrationForm.reset();
   }
 
-  navigateTo() {
-    this.router.navigate(['/login']);
-  }
+  
 }

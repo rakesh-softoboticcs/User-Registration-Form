@@ -1,3 +1,7 @@
+import { NewdesignComponent } from './newdesign/newdesign.component';
+import { TodosComponent } from './todos/todos.component';
+import { HomepageauthGuard } from './homepageauth.guard';
+import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { RegistrationComponent } from './registration/registration.component';
@@ -6,11 +10,12 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: LoginComponent },
-  { path: 'register', component: RegistrationComponent },
-  { path: 'success-page', component: RegisterSuccessComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'homepage', component: HomepageComponent },
+  { path: '', component: NewdesignComponent },
+  { path: 'register', component: RegistrationComponent,canActivate:[HomepageauthGuard] },
+  { path: 'success-page', component: RegisterSuccessComponent,canActivate:[HomepageauthGuard] },
+  { path: 'login', component: LoginComponent,canActivate:[HomepageauthGuard]},
+  { path: 'homepage', component: HomepageComponent,canActivate:[AuthGuard] },
+  {path:'userTodos',component:TodosComponent}
 ];
 
 @NgModule({
@@ -23,4 +28,6 @@ export const routingComponents = [
   RegisterSuccessComponent,
   LoginComponent,
   HomepageComponent,
+  TodosComponent,
+  NewdesignComponent
 ];

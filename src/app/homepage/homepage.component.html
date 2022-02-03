@@ -45,8 +45,7 @@
         <!-- User Name -->
         <div class="form-group  mt-3">
           <label for="">Username</label>
-          <input
-            [class.is-invalid]="userName?.invalid && userName?.touched || id?.errors?.['userNameAlreadyUsed']"
+          <input [class.is-invalid]="userName?.invalid && userName?.touched || id?.errors?.['userNameAlreadyUsed']"
             formControlName="userName" type="text" class="form-control">
           <div *ngIf="userName?.invalid && userName?.touched || id?.errors?.['userNameAlreadyUsed']">
             <small *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
@@ -57,12 +56,21 @@
           </div>
         </div>
 
+        <!-- Gender -->
+        <div class="form-group mt-3">
+          <label for="" class="mr-5">Gender</label>
+          <input type="radio" value="Male" formControlName="gender">
+          <label for="" class="radio-label ml-1 mr-5">Male</label>
+          <input type="radio" value="Female" formControlName="gender">
+          <label for="" class="radio-label ml-1 ">Female</label>
+        </div>
+
         <!-- Email id -->
 
         <div class="form-group  mt-3">
           <label for="">Email</label>
-          <input [class.is-invalid]="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']"
-            type="text" formControlName="email" class="form-control">
+          <input [class.is-invalid]="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']" type="text"
+            formControlName="email" class="form-control">
           <div *ngIf="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']">
             <small class="text-danger" *ngIf="id?.errors?.['required']">Email is required</small>
             <small class="text-danger" *ngIf="email?.errors?.['email']">Email is incorrect</small>
@@ -116,6 +124,7 @@
         <th scope="col">First Name</th>
         <th scope="col">Last Name</th>
         <th scope="col">User Name</th>
+        <th scope="col">Gender</th>
         <th scope="col">Email ID</th>
         <th scope="col">Password</th>
       </tr>
@@ -124,14 +133,15 @@
 
       <tr scope="row" *ngFor="let user of userList;let i=index">
         <td>{{i+1}}</td>
-        <td>{{user.firstName}}</td>
+        <td>{{user.firstName | gender:user.gender}}</td>
         <td>{{user.lastName}}</td>
         <td>{{user.userName}}</td>
+        <td>{{user.gender}}</td>
         <td>{{user.email}}</td>
         <td>{{user.password}}</td>
         <!-- Edit Button -->
         <td><button class="btn btn-primary pl-3 pr-3" (click)="openVerticallyCentered(content);onEdit(user)"
-            [disabled]="disableCurrentUser(user)"> Edit </button></td>
+            [disabled]="user?.id==result?.id"> Edit </button></td>
         <!-- Edit form -->
         <ng-template #content let-modal>
           <div class="modal-header">
@@ -184,6 +194,15 @@
                   <small *ngIf="userName?.errors?.['userNameAlreadyUsed']" class="text-danger">User Name is already
                     used</small>
                 </div>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group mt-3">
+                <label for="" class="mr-5">Gender</label>
+                <input type="radio" value="Male" formControlName="gender">
+                <label for="" class="radio-label ml-1 mr-5">Male</label>
+                <input type="radio" value="Female" formControlName="gender">
+                <label for="" class="radio-label ml-1 ">Female</label>
               </div>
 
               <!-- Email id -->
@@ -243,5 +262,6 @@
       </tr>
     </tbody>
   </table>
-  <button type="button" class="btn btn-primary" (click)="onClick()">Logout</button>
+  <button type="button" class="btn btn-primary" (click)="onLogout() ">Logout</button>
+  <button class="btn btn-primary ml-5" (click)="onUserTodos()">Todos User</button>
 </div>

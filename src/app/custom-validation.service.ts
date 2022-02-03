@@ -20,7 +20,7 @@ export class CustomValidationService {
   }
 
   checkUserNameValidator(control: AbstractControl): any {
-    // console.log(control.value);
+    console.log(control.value);
 
     let data = this._userService
       .getAllUsers()

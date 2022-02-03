@@ -1,0 +1,622 @@
+.title-container {
+  height: 379px;
+  background-color: #17263f;
+}
+
+.roboto-slab-font {
+  font-family: "Roboto Slab", serif;
+  font-size: 40px;
+  color: rgba(23, 38, 63, 1);
+}
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(69, 81, 101, 1);
+}
+
+.career-opios {
+  font-family: "Open Sans", sans-serif;
+  color: #58c9e8;
+  font-size: 14px;
+  padding-top: 100px;
+}
+
+.title {
+  font-family: "Roboto Slab", serif;
+  font-size: 60px;
+  color: #ffffff;
+}
+
+.button-careers {
+  background: linear-gradient(#10dda3 0%, #0ccb95 100%);
+  border: 1px solid #10dda3;
+  border-radius: 10px;
+  margin-bottom: 100px;
+  width: 170px;
+  height: 40px;
+}
+
+.core-values {
+  font-family: "Open Sans", sans-serif;
+  color: rgba(88, 201, 232, 1);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-top: 127px;
+  margin-bottom: 24px;
+  width: 117px;
+  height: 19px;
+}
+
+.cloud-computing {
+  width: 524px;
+  height: 96px;
+}
+
+.aws-description {
+  margin-top: 24px;
+  margin-bottom: 93px;
+  width: 753px;
+  height: 75px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(23, 38, 63, 1);
+  margin-top: 24px;
+  /* width: 117px;
+    height: 33px; */
+}
+
+.card-description {
+  margin-top: 24px;
+  width: 285px;
+  height: 125px;
+}
+
+.image-container {
+  margin-top: 96px;
+  height: 529px;
+  background-color: rgba(248, 250, 255, 1);
+}
+
+.office-img {
+  width: 489px;
+  height: 332px;
+  margin-top: 78px;
+  margin-left: 181px;
+}
+
+.company-description-title {
+  position: absolute;
+  top: 1325px;
+  left: 733px;
+  width: 507px;
+  height: 48px;
+}
+
+.company-description {
+  width: 484px;
+  height: 75px;
+  position: absolute;
+  top: 1400px;
+  left: 733px;
+}
+
+tick-mark-icon {
+  width: 25px;
+  height: 22.01;
+}
+
+.tick-mark-img {
+  position: absolute;
+  left: 733px;
+}
+
+.tick-mark-img-1 {
+  top: 1500px;
+}
+
+.tick-mark-img-2 {
+  top: 1550px;
+}
+
+.tick-mark-img-3 {
+  top: 1600px;
+}
+
+.company-description-list {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(69, 81, 101, 1);
+}
+
+.company-description-list-1 {
+  position: absolute;
+  top: 1500px;
+  left: 772px;
+}
+
+.company-description-list-2 {
+  position: absolute;
+  top: 1550px;
+  left: 772px;
+}
+
+.company-description-list-3 {
+  position: absolute;
+  top: 1600px;
+  left: 772px;
+}
+
+.opportunities-title {
+  margin-top: 85px;
+}
+
+.opportunities-description {
+  width: 753px;
+  height: 50px;
+  margin: 23px 0 86px 0;
+}
+
+.horizontal-bar{
+    width:1190px;
+}
+
+.job-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: rgba(23, 38, 63, 1);
+  margin-left: 179px;
+  width: 325px;
+  height: 33px;
+}
+
+.bdm {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  color: rgba(23, 38, 63, 1);
+  margin-left: 179px;
+  width: 394px;
+  height: 33px;
+}
+
+.location-icon {
+  margin-left: 174px;
+  margin-top: 22px;
+  width: 18px;
+  height: 22px;
+}
+
+.location-name {
+  margin-top: 21px;
+  margin-left: 8px;
+  width: 325px;
+  height: 33px;
+}
+
+.job-description-container{
+    display: flex;
+}
+
+.pm-description {
+  margin-left: 174px;
+  margin-top: 27px;
+  margin-right: 521px;
+  margin-bottom: 32px;
+  width: 740px;
+  height: 57px;
+}
+
+.button-apply {
+  position: absolute;
+  left: 1039px;
+}
+
+.time-icon {
+  margin-top: 22px;
+  margin-left: 61px;
+  width: 20px;
+  height: 20px;
+}
+
+.time-name {
+  margin-top: 21px;
+  margin-left: 7px;
+  width: 59px;
+  height: 19px;
+}
+
+.time-name2 {
+  width: 68px;
+}
+
+@media screen and (max-width: 1200px) {
+  .office-img {
+    width: 400px;
+    height: 350px;
+    margin-top: 78px;
+    margin-left: 30px;
+  }
+
+  .company-description-title {
+    position: absolute;
+    top: 1325px;
+    left: 520px;
+  }
+
+  .company-description {
+    width: 430px;
+    height: 75px;
+    position: absolute;
+    top: 1400px;
+    left: 520px;
+  }
+
+  .tick-mark-img {
+    position: absolute;
+    left: 520px;
+  }
+
+  .company-description-list-1 {
+    position: absolute;
+    top: 1500px;
+    left: 559px;
+  }
+
+  .company-description-list-2 {
+    position: absolute;
+    top: 1550px;
+    left: 559px;
+  }
+
+  .company-description-list-3 {
+    position: absolute;
+    top: 1600px;
+    left: 559px;
+  }
+
+  .horizontal-bar{
+      width:875px;
+  }
+
+  .job-title {
+    margin-left: 150px;
+  }
+
+  .bdm {
+    margin-left: 150px;
+    width: 394px;
+    height: 33px;
+  }
+
+  .location-icon {
+    margin-left: 145px;
+  }
+
+  .pm-description {
+    margin-left: 150px;
+    margin-bottom: 64px;
+  }
+
+  .button-apply {
+    position: absolute;
+    left: 800px;
+  }
+
+  .time-icon {
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 1250px){
+    .horizontal-bar{
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .horizontal-bar{
+        width: 975px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+  .title-container {
+    height: 414px;
+    background-color: #17263f;
+  }
+
+  .roboto-slab-font {
+    font-family: "Roboto Slab", serif;
+    font-size: 40px;
+    color: rgba(23, 38, 63, 1);
+  }
+  .open-sans-font {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgba(69, 81, 101, 1);
+  }
+
+  .career-opios {
+    font-family: "Open Sans", sans-serif;
+    color: #58c9e8;
+    font-size: 14px;
+    padding-top: 81px;
+  }
+
+  .title {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 40px;
+    margin-top: 32px;
+    padding-left: 30px;
+    color: #ffffff;
+    width: 312px;
+    height: 48px;
+  }
+
+  .button-careers {
+    border-radius: 10px;
+    margin-top: 32px;
+    margin-bottom: 123px;
+    width: 130px;
+    height: 30px;
+  }
+
+  .core-values {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .cloud-computing {
+    font-size: 30px;
+    width: 312px;
+    height: 72px;
+  }
+
+  .aws-description {
+    margin-top: 22px;
+    margin-bottom: 39px;
+    font-size: 14px;
+    width: 311px;
+    height: 114px;
+  }
+
+  .cards-container-sm {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-title-container {
+    display: flex;
+  }
+
+  .icons {
+    margin-top: 32px;
+    margin-left: 24px;
+  }
+
+  .card-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: rgba(23, 38, 63, 1);
+    margin-top: 39px;
+    margin-left: 18px;
+  }
+
+  .card-description {
+    margin-top: 22px;
+    margin-left: 82px;
+    font-size: 14px;
+    width: 285px;
+    height: 125px;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 0;
+    margin-top: 53px;
+    width: 550px;
+    height: 660px;
+    background-color: rgba(248, 250, 255, 1);
+  }
+
+  .office-img {
+      margin: 0;
+    width: 425px;
+    height: 220px;
+  }
+
+  .company-description-title {
+   
+    width: 312px;
+    height: 72px;
+    font-size: 30px;
+    position: absolute;
+    top: 1768px;
+    left: 125px;
+  }
+
+  .company-description {
+    width: 311px;
+    height: 114px;
+    font-size: 14px;
+    position: absolute;
+    top: 1875px;
+    left: 75px;
+    
+  }
+
+  tick-mark-icon {
+    width: 23px;
+    height: 23.01;
+  }
+
+  .tick-mark-img {
+      position: absolute;
+      left: 75px;
+    
+  }
+
+  .tick-mark-img-1 {
+      
+      top:2000px;
+   
+  }
+
+  .tick-mark-img-2 {
+    top:2050px;
+    
+  }
+
+  .tick-mark-img-3 {
+    top:2100px;
+    
+  }
+
+  .company-description-list {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(69, 81, 101, 1);
+    
+  }
+
+  .company-description-list-1 {
+      top: 2000px;
+      left: 110px;
+   
+  }
+
+  .company-description-list-2 {
+    top: 2050px;
+    left: 110px;
+    
+  }
+
+  .company-description-list-3 {
+    top: 2100px;
+    left: 110px;
+   
+  }
+
+  .opportunities-title {
+    margin-top: 50px;
+    margin-left: 50px;
+    font-size: 30px;
+    width: 312px;
+    height: 72px;
+  }
+
+  .opportunities-description {
+      font-size: 14px;
+    width: 311px;
+    height: 57px;
+    margin: 22px 0 35px 0;
+  }
+
+  .horizontal-bar
+  {
+    width: 400px;
+  }
+
+  .job-title {
+    font-size: 18px;
+    margin-left: 18px;
+    width: 325px;
+    height: 25px;
+  }
+
+  .bdm {
+    
+    font-size: 18px;
+    
+    margin-left: 18px;
+    width: 394px;
+    height: 25px;
+  }
+
+  .location-icon {
+    margin-left: 20.5px;
+    margin-top: 11px;
+    width: 13.5px;
+    height: 16.5px;
+  }
+
+  .location-name {
+    margin-top: 9px;
+    margin-left: 7.25px;
+    font-size: 14px;
+    width: 113px;
+    height: 17px;
+  }
+
+  .job-description-container{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .pm-description {
+    margin-left: 25px;
+    margin-top: 16px;
+    margin-bottom: 90px;
+    font-size: 14px;
+    width: 290px;
+    height: 85px;
+    
+  }
+
+  .button-apply-1 {
+   position: absolute;
+   left: 18px;
+   top: 2660px;
+  }
+
+  .button-apply-2 {
+    position: absolute;
+    left: 18px;
+    top: 2945px;
+   }
+
+   .button-apply-3 {
+    position: absolute;
+    left: 18px;
+    top: 3230px;
+   }
+
+  .time-icon {
+    margin-top: 13.7px;
+    margin-left: 24px;
+    width: 11.67px;
+    height: 11.6px;
+  }
+
+  .time-name {
+    margin-top: 9px;
+    margin-left: 6.17px;
+    width: 59px;
+    height: 19px;
+  }
+
+  .time-name2 {
+    width: 68px;
+  }
+}
+
+

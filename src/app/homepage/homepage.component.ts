@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { UserService } from './../user.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,6 +13,8 @@ import { FormGroup, Validators, FormBuilder, AbstractControl } from '@angular/fo
 })
 export class HomepageComponent implements OnInit {
   userList: any[] = [];
+  user:any={};
+  result:any;
 
   registrationForm: any = FormGroup;
   _customValidation: any;
@@ -46,7 +49,8 @@ export class HomepageComponent implements OnInit {
     private fb: FormBuilder,
     private router: Router,
     private modalService: NgbModal,
-    private _customValidation1: CustomValidationService
+    private _customValidation1: CustomValidationService,
+    private cookie:CookieService
   ) {
     this.userList = this._userService.getAllUsers();
   }
@@ -56,6 +60,7 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+     this.result = this._userService.getCurrentUser();
     this.registrationForm = this.fb.group(
       {
         id: [
@@ -71,8 +76,9 @@ export class HomepageComponent implements OnInit {
             Validators.maxLength(15),
           ],
         ],
-        userName: ['', [Validators.required, Validators.minLength(3),this.checkUsername.bind(this)]],
-        email: ['', [Validators.required, Validators.email,this._customValidation.checkEditEmailValidator.bind(this)]],
+        userName: ['', [Validators.required, Validators.minLength(3)]],
+        gender:[''],
+        email: ['', [Validators.required, Validators.email]],
         password: [
           '',
           [
@@ -87,40 +93,51 @@ export class HomepageComponent implements OnInit {
     );
   }
 
-  checkUsername(ac:AbstractControl){
-    if(this.currentUser.userName===ac)
-      this._customValidation.checkEditUserNameValidator.bind(ac)
-  }
+  // checkUsername(ac:AbstractControl){
+  //   if(this._userService.getCurrentUser()===ac)
+  //     this._customValidation.checkEditUserNameValidator.bind(ac)
+  // }
 
-  onClick() {
+  onLogout() {
+    
+    this.cookie.deleteAll();
     this.router.navigate(['/login']);
   }
 
   onEdit(data: any) {
     // console.log(data);
+    
 
     this.registrationForm.patchValue({
       id: data.id,
       firstName: data.firstName,
       lastName: data.lastName,
       userName: data.userName,
+      gender:data.gender,
       email: data.email,
       password: data.password,
       confirmPassword: data.confirmPassword,
     });
 
+    
+
     this._userService.editedUser(this.registrationForm.value);
 
-    let value = this._userService.getCurrentUser();
+
   }
   onDelete(data: any) {
     this._userService.delete(data);
+
   }
 
   disableCurrentUser(data: any) {
     let result = this._userService.getCurrentUser();
+   
 
-    if (result === data.id) {
+    console.log(result);
+    
+    
+    if (result.id === data.id) {
       return true;
     } else {
       return false;
@@ -129,9 +146,16 @@ export class HomepageComponent implements OnInit {
 
   onSubmit(data: any) {
     this._userService.register(data);
+    this.user = Object.assign(this.user,data);
+    this._userService.localStorageUser(this.user);
   }
 
   onReset() {
     this.registrationForm.reset();
+  }
+
+  onUserTodos()
+  {
+    this.router.navigate(['userTodos'])
   }
 }

@@ -1,3 +1,4 @@
+import { BdmComponent } from './bdm/bdm.component';
 import { NewdesignComponent } from './newdesign/newdesign.component';
 import { TodosComponent } from './todos/todos.component';
 import { HomepageauthGuard } from './homepageauth.guard';
@@ -10,7 +11,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', component: NewdesignComponent },
+  { path: '', component: BdmComponent },
   { path: 'register', component: RegistrationComponent,canActivate:[HomepageauthGuard] },
   { path: 'success-page', component: RegisterSuccessComponent,canActivate:[HomepageauthGuard] },
   { path: 'login', component: LoginComponent,canActivate:[HomepageauthGuard]},

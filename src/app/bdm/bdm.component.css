@@ -1,0 +1,677 @@
+.title-container {
+  height: 352px;
+  background-color: rgba(23, 38, 63, 1);
+}
+
+.roboto-slab-font {
+  font-family: "Roboto Slab", serif;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+.open-sans-font {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(69, 81, 101, 1);
+}
+
+.title-lg {
+  width: 650px;
+  height: 96px;
+  color: rgba(255, 255, 255, 1);
+  padding: 92px 0 0 179px;
+}
+
+.location-icon {
+  margin-left: 179px;
+  margin-top: 125px;
+
+  width: 24px;
+  height: 24px;
+}
+
+.location-name {
+  margin-left: 8px;
+  margin-top: 124px;
+  width: 325px;
+  height: 19px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.time-icon {
+  margin-top: 124px;
+  width: 24px;
+  height: 24px;
+}
+
+.time-name {
+  margin-left: 7px;
+  margin-top: 124px;
+  width: 68px;
+  height: 19px;
+  color: rgba(255, 255, 255, 1);
+}
+
+.back-container {
+  display: flex;
+  margin-left: 181px;
+}
+
+.arrow-img {
+  width: 15px;
+  height: 15px;
+  margin-top: 54px;
+}
+
+.back-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 13.61px;
+  font-weight: 600;
+  color: rgba(23, 38, 63, 1);
+  width: 142px;
+  height: 19px;
+  margin-left: 21px;
+  margin-top: 50px;
+}
+
+.job-description-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  width: 325px;
+  height: 33px;
+  margin-left: 181px;
+  margin-top: 13px;
+}
+
+.job-description {
+  width: 429px;
+  height: 380px;
+  margin-left: 181px;
+  margin-top: 24px;
+  margin-bottom: 32px;
+  line-height: 19.2px;
+}
+
+.list-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(23, 38, 63, 1);
+  margin-left: 20px;
+  width: 325px;
+  height: 33px;
+  margin-bottom: 24px;
+}
+
+.roles {
+  width: 529px;
+  height: 627px;
+  margin-left: 150px;
+}
+
+.list-title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(23, 38, 63, 1);
+  margin-left: 0px;
+  width: 325px;
+  height: 33px;
+  margin-bottom: 24px;
+}
+
+.list-description {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(69, 81, 101, 1);
+  margin-left: 20px;
+}
+
+/* 
+.roles > li {
+  
+  margin-left: 179px;
+} */
+
+.experience {
+  width: 529px;
+  height: 380px;
+  margin-top: 296px;
+  margin-left: 150px;
+  margin-bottom: 232px;
+}
+
+.card-lg {
+  width: 587px;
+  height: 678px;
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(255, 255, 255, 1);
+  box-shadow: 15px 15px 20px rgba(23, 38, 63, 0.2);
+  position: absolute;
+  top: 92px;
+  right: 94px;
+}
+
+.card-title {
+  width: 507px;
+  height: 48px;
+  margin: 32px 0 0 35px;
+}
+
+.card-description {
+  width: 484px;
+  height: 50px;
+  margin: 20px 0 32px 35px;
+}
+
+.input-background-color {
+  border-radius: 10px;
+  background-color: rgba(162, 168, 178, 1);
+  border: 1px solid rgba(162, 168, 178, 1);
+  opacity: 0.5;
+}
+
+.name {
+  width: 520px;
+  height: 48px;
+
+  padding-left: 17px;
+
+  margin: 0 0 32px 35px;
+}
+.email {
+  width: 256px;
+  height: 48px;
+  padding-left: 17px;
+  margin: 0 12px 32px 35px;
+}
+
+.phone-no {
+  width: 252px;
+  height: 48px;
+  padding-left: 113px;
+  margin: 0 0 32px 0;
+}
+
+.tell-yourself {
+  width: 507px;
+  height: 107px;
+  padding: 24px 0 61px 24px;
+  margin: 0 0 32px 35px;
+}
+
+.attach {
+  width: 520px;
+  height: 79px;
+  padding: 27px 97.73px 27px 156.27px;
+  margin: 0 0 32px 35px;
+}
+
+.button-submit {
+  background: linear-gradient(#10dda3 0%, #0ccb95 100%);
+  border: 1px solid #10dda3;
+  border-radius: 10px;
+  margin: 0 0 46px 33px;
+  width: 198px;
+  height: 40px;
+  text-decoration-color: rgba(255, 255, 255, 1);
+}
+
+@media screen and (max-width: 1350px) {
+}
+
+@media screen and (max-width: 1250px) {
+}
+@media screen and (max-width: 1330px) {
+    .card-lg{
+        width: 450px;
+        height: 750px;
+        right: 30px;
+    }
+
+      
+      .card-description {
+        width: 400px;
+        height: 50px;
+        margin: 20px 0 32px 35px;
+      }
+      
+      .input-background-color {
+        border-radius: 10px;
+        background-color: rgba(162, 168, 178, 1);
+        border: 1px solid rgba(162, 168, 178, 1);
+        opacity: 0.5;
+      }
+      
+      .name {
+        width: 400px;
+        height: 48px;
+      
+        padding-left: 17px;
+      
+        margin: 0 0 32px 35px;
+      }
+      .email {
+        width: 400px;
+        height: 48px;
+        padding-left: 17px;
+        margin: 0 35px 32px 35px;
+      }
+      
+      .phone-no-m {
+        width: 400px;
+        height: 48px;
+        padding-left: 113px;
+        margin: 0 0 32px 35px;
+      }
+      
+      .tell-yourself {
+        width: 400px;
+        height: 107px;
+        padding: 24px 0 61px 24px;
+        margin: 0 0 32px 35px;
+      }
+      
+      .attach {
+        width: 400px;
+        height: 79px;
+        padding: 27px 97.73px 27px 156.27px;
+        margin: 0 0 32px 35px;
+      }
+      
+      .button-submit {
+        background: linear-gradient(#10dda3 0%, #0ccb95 100%);
+        border: 1px solid #10dda3;
+        border-radius: 10px;
+        margin: 0 0 46px 33px;
+        width: 150px;
+        height: 40px;
+        text-decoration-color: rgba(255, 255, 255, 1);
+      }
+
+
+}
+
+
+
+
+@media screen and (max-width: 425px) {
+  .title-container {
+    height: 414px;
+    background-color: rgba(23, 38, 63, 1);
+  }
+
+  .roboto-slab-font {
+    font-family: "Roboto Slab", serif;
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  .open-sans-font {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(69, 81, 101, 1);
+  }
+
+  .title-sm {
+   width: 312px;
+   height: 144px;
+   margin-left: -125px;
+    
+  }
+
+  .location-icon {
+    margin-left: 70.25px;
+    margin-top: 125px;
+
+    width: 13.5px;
+    height: 16px;
+  }
+
+  .location-name {
+    margin-left: 7.25px;
+    margin-top: 123px;
+    font-size: 14px;
+    width: 113px;
+    height: 17px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .time-icon {
+      margin-left: 18.17px;
+    margin-top: 127px;
+    width: 11.67px;
+    height: 11.67px;
+  }
+
+  .time-name {
+    margin-left: 7.25px;
+    margin-top: 123px;
+    font-size: 14px;
+    width: 68px;
+    height: 19px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  .back-container {
+    display: flex;
+    margin-left: 25px;
+  }
+
+  .arrow-img {
+    width: 15px;
+    height: 15px;
+    margin-top: 29px;
+  }
+
+  .back-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 13.61px;
+    font-weight: 600;
+    color: rgba(23, 38, 63, 1);
+    width: 142px;
+    height: 19px;
+    margin-left: 10px;
+    margin-top: 25px;
+  }
+
+  .job-description-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    width: 147px;
+    height: 27px;
+    margin-left: 24px;
+    margin-top: 25px;
+  }
+
+  .job-description {
+    width: 312px;
+    height: 408px;
+    font-size: 14px;
+    margin-left: 24px;
+    margin-top: 14px;
+    margin-bottom: 32px;
+  }
+
+  .list-title {
+    font-family: "Open Sans", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: rgba(23, 38, 63, 1);
+    width: 325px;
+    height: 33px;
+  }
+
+  .list-description {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: rgba(69, 81, 101, 1);
+    margin-left: 20px;
+  }
+
+  .roles {
+    width: 313px;
+    height: 714px;
+    margin-left: -10px;
+    margin-top: 64px;
+  }
+
+  .experience {
+    width: 313px;
+    height: 640px;
+    margin-top: 332px;
+    margin-left: 0;
+    margin-bottom: -40px;
+  }
+
+  .card-sm {
+    width: 332px;
+    height: 625px;
+    border: 1px solid rgba(255, 255, 255, 1);
+    box-shadow: 15px 15px 20px rgba(23, 38, 63, 0.2);
+    position: relative;
+    left: 35px;
+  }
+
+  .card-title {
+    font-size: 20px;
+    width: 104px;
+    height: 24px;
+    margin: 24px 0 0 21px;
+  }
+
+  .card-description {
+    font-size: 14px;
+    width: 295px;
+    height: 57px;
+    margin: 20px 0 32px 21px;
+  }
+
+  .input-background-color {
+    font-size: 14px;
+    border-radius: 10px;
+    background-color: rgba(162, 168, 178, 1);
+    border: 1px solid rgba(162, 168, 178, 1);
+    opacity: 0.5;
+  }
+
+  .name {
+    width: 308px;
+    height: 48px;
+
+    padding-left: 24px;
+
+    margin: 0 0 16px 8px;
+  }
+  .email {
+    width: 308px;
+    height: 48px;
+
+    padding-left: 24px;
+
+    margin: 0 0 16px 8px;
+  }
+
+  .phone-no {
+    width: 308px;
+    height: 48px;
+
+    padding-left: 24px;
+
+    margin: 0 0 16px 8px;
+  }
+
+  .tell-yourself {
+    width: 308px;
+    height: 107px;
+    padding: 16px 0 72px 13px;
+    margin: 0 0 16px 8px;
+  }
+
+  .attach {
+    width: 308px;
+    height: 79px;
+    padding: 16px 0 0 13px;
+    margin: 0 0 25px 8px;
+  }
+
+  .button-submit {
+    background: linear-gradient(#10dda3 0%, #0ccb95 100%);
+    border: 1px solid #10dda3;
+    border-radius: 10px;
+    margin: 0 0 37px 8px;
+    width: 130px;
+    height: 30px;
+    text-decoration-color: rgba(255, 255, 255, 1);
+  }
+}
+
+@media screen and (max-width: 370px) {
+
+
+    
+      .title-sm {
+       width: 312px;
+       height: 144px;
+       margin-left: -125px;
+        
+      }
+    
+    
+      .location-name {
+        margin-left: 7.25px;
+        margin-top: 123px;
+        font-size: 14px;
+        width: 113px;
+        height: 17px;
+        color: rgba(255, 255, 255, 1);
+      }
+    
+      .time-icon {
+          margin-left: 18.17px;
+        margin-top: 127px;
+        width: 11.67px;
+        height: 11.67px;
+      }
+    
+      .time-name {
+        margin-left: 7.25px;
+        margin-top: 123px;
+        font-size: 14px;
+        width: 68px;
+        height: 19px;
+        color: rgba(255, 255, 255, 1);
+      }
+
+    
+      .job-description-title {
+        font-family: "Open Sans", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+        width: 147px;
+        height: 27px;
+        margin-left: 24px;
+        margin-top: 25px;
+      }
+    
+      .job-description {
+        width: 290px;
+        height: 386px;
+        font-size: 14px;
+        margin-left: 24px;
+        margin-top: 14px;
+        margin-bottom: 32px;
+      }
+    
+      .list-title {
+        font-family: "Open Sans", sans-serif;
+        font-size: 24px;
+        font-weight: 600;
+        color: rgba(23, 38, 63, 1);
+        width: 300px;
+        height: 58px;
+      }
+    
+      .list-description {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgba(69, 81, 101, 1);
+        margin-left: 20px;
+      }
+    
+      .roles {
+        width: 291px;
+        height: 736px;
+        margin-left: -10px;
+        margin-top: 108px;
+      }
+    
+      .experience {
+        width: 313px;
+        height: 640px;
+        margin-top: 400px;
+        margin-left: 0;
+        margin-bottom: 0px;
+      }
+
+    .card-sm {
+        width: 304px;
+        height: 625px;
+        border: 1px solid rgba(255, 255, 255, 1);
+        box-shadow: 15px 15px 20px rgba(23, 38, 63, 0.2);
+        position: relative;
+        left: 8px;
+      }
+    
+      .card-title {
+        font-size: 20px;
+        width: 104px;
+        height: 24px;
+        margin: 24px 0 0 21px;
+      }
+    
+      .card-description {
+        font-size: 14px;
+        width: 267px;
+        height: 57px;
+        margin: 20px 0 32px 21px;
+      }
+    
+    
+      .name {
+        width: 280px;
+        height: 48px;
+    
+        padding-left: 24px;
+    
+        margin: 0 0 16px 8px;
+      }
+      .email {
+        width: 280px;
+        height: 48px;
+    
+        padding-left: 24px;
+    
+        margin: 0 0 16px 8px;
+      }
+    
+      .phone-no {
+        width: 280px;
+        height: 48px;
+    
+        padding-left: 24px;
+    
+        margin: 0 0 16px 8px;
+      }
+    
+      .tell-yourself {
+        width: 280px;
+        height: 107px;
+        padding: 16px 0 72px 13px;
+        margin: 0 0 16px 8px;
+      }
+    
+      .attach {
+        width: 286px;
+        height: 79px;
+      }
+  
+
+}
+
+@media screen and (max-width: 400px){
+     .card-sm {
+        position: relative;
+        left: 35px;
+      }
+    
+      
+
+}

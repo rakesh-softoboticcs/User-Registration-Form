@@ -14,6 +14,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { TodosComponent } from './todos/todos.component';
 import {HttpClientModule} from '@angular/common/http';
 import { NewdesignComponent } from './newdesign/newdesign.component';
+import { BdmComponent } from './bdm/bdm.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NewdesignComponent } from './newdesign/newdesign.component';
     GenderPipe,
     TodosComponent,
     NewdesignComponent,
+    BdmComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule, NgbModule,HttpClientModule],
   providers: [CookieService,UserService],

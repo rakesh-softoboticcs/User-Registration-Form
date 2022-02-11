@@ -1,0 +1,9 @@
+<p class="display-2">Parent Component</p>
+
+<app-child1 [dataChild2]="messageChild2" (messageDataChild1)="recieveDataChild1($event)"></app-child1>
+<!-- [dataChild2]="messageChild2" (messageDataChild1)="recieveDataChild1($event)" -->
+
+<app-child2 (messageDataChild2)="recieveDataChild2($event)" [dataChild1]="messageChild1"></app-child2>
+<!-- (messageDataChild2)="recieveDataChild2($event)" [dataChild1]="messageChild1" -->
+
+

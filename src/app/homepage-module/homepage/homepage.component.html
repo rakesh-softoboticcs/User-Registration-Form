@@ -1,0 +1,273 @@
+<div class="container-fluid">
+  <h1>Welcome to Home Page</h1><br><br>
+  <button [routerLink]="'/bdm'" class="btn btn-primary">BDM</button>
+  <button [routerLink]="'/newdesign'" class="btn btn-primary ml-5">New Design</button>
+  <button [routerLink]="'/todos'" class="btn btn-primary ml-5">Todos</button>
+  <button [routerLink]="'/parent'" class="btn btn-primary ml-5">Parent</button>
+ 
+  <hr>
+  <!-- Add users -->
+  <button class="btn btn-outline-primary mb-2 mr-2" (click)="openVerticallyCentered(content)" (click)="onReset()"> Add
+    Users</button>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Register Details</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+
+      <form [formGroup]="registrationForm" (ngSubmit)="onSubmit(registrationForm.value)" novalidate>
+        <!-- First Name -->
+        <div class="form-group  mt-3">
+          <label for="">Firstname</label>
+          <input [class.is-invalid]="firstName?.invalid && firstName?.touched" formControlName="firstName" type="text"
+            class="form-control">
+          <div *ngIf="firstName?.invalid && firstName?.touched">
+            <small *ngIf="firstName?.errors?.['required']" class="text-danger">Firstname is required</small>
+            <small *ngIf="firstName?.errors?.['minlength']" class="text-danger">Firstname must have atleast 5
+              characters</small>
+          </div>
+        </div>
+
+        <!-- Last Name -->
+
+        <div class="form-group  mt-3">
+          <label for="">Lastname</label>
+          <input [class.is-invalid]="lastName?.invalid && lastName?.touched" formControlName="lastName" type="text"
+            class="form-control">
+          <div *ngIf="lastName?.invalid && lastName?.touched">
+            <small *ngIf="lastName?.errors?.['required']" class="text-danger">Lastname is required</small>
+            <small *ngIf="lastName?.errors?.['minlength']" class="text-danger">Lastname must have atleast 2
+              characters</small>
+            <small *ngIf="lastName?.errors?.['maxlength']" class="text-danger">Lastname must have max 15
+              characters</small>
+          </div>
+        </div>
+
+        <!-- User Name -->
+        <div class="form-group  mt-3">
+          <label for="">Username</label>
+          <input [class.is-invalid]="userName?.invalid && userName?.touched || id?.errors?.['userNameAlreadyUsed']"
+            formControlName="userName" type="text" class="form-control">
+          <div *ngIf="userName?.invalid && userName?.touched || id?.errors?.['userNameAlreadyUsed']">
+            <small *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
+            <small *ngIf="userName?.errors?.['minlength']" class="text-danger">Username must have atleast
+              3characters</small>
+            <small *ngIf="id?.errors?.['userNameAlreadyUsed']" class="text-danger">User Name is already
+              used</small>
+          </div>
+        </div>
+
+        <!-- Gender -->
+        <div class="form-group mt-3">
+          <label for="" class="mr-5">Gender</label>
+          <input type="radio" value="Male" formControlName="gender">
+          <label for="" class="radio-label ml-1 mr-5">Male</label>
+          <input type="radio" value="Female" formControlName="gender">
+          <label for="" class="radio-label ml-1 ">Female</label>
+        </div>
+
+        <!-- Email id -->
+
+        <div class="form-group  mt-3">
+          <label for="">Email</label>
+          <input [class.is-invalid]="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']" type="text"
+            formControlName="email" class="form-control">
+          <div *ngIf="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']">
+            <small class="text-danger" *ngIf="id?.errors?.['required']">Email is required</small>
+            <small class="text-danger" *ngIf="email?.errors?.['email']">Email is incorrect</small>
+            <small *ngIf="id?.errors?.['emailIdAlreadyUsed']" class="text-danger">Email Id is already used</small>
+
+          </div>
+        </div>
+
+        <!-- Password -->
+
+        <div class="form-group  mt-3">
+          <label for="">Password</label>
+          <input
+            [class.is-invalid]="password?.invalid && password?.touched || password?.errors?.['pattern'] && password?.errors?.['minlength']"
+            formControlName="password" type="password" class="form-control">
+          <div
+            *ngIf="password?.invalid && password?.touched || password?.errors?.['pattern'] && password?.errors?.['minlength']">
+            <small class="text-danger" *ngIf="password?.errors?.['required']">Password is required</small><br>
+            <small class="text-danger" *ngIf="password?.errors?.['minlength']">Password should have atleast 8
+              characters</small><br>
+            <small class="text-danger" *ngIf="password?.errors?.['pattern']">Password should have alteast 1 uppercase,1
+              lowercase,1numeric and 1 special characters</small>
+          </div>
+
+        </div>
+
+        <!-- Confirm password -->
+
+        <div class="form-group  mt-3">
+          <label for="">Confirm Password</label>
+          <input [class.is-invalid]="registrationForm.errors?.['misMatch']" formControlName="confirmPassword"
+            type="password" class="form-control">
+          <small class="text-danger" *ngIf="registrationForm.errors?.['misMatch']">Password do not match</small>
+        </div>
+
+        <!-- Submit button -->
+
+        <button [disabled]="!registrationForm.valid" class="btn btn-primary mt-3" type="submit"
+          (click)="modal.close('Close click')"> Register</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+    </div>
+  </ng-template>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Email ID</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr scope="row" *ngFor="let user of userList">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName | gender:user.gender}}</td>
+        <td>{{user.lastName}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.password}}</td>
+        <!-- Edit Button -->
+        <td><button class="btn btn-primary pl-3 pr-3" (click)="openVerticallyCentered(content);onEdit(user)"
+          > Edit </button></td>
+          <!-- [disabled]="disableCurrentUser(user.id)" -->
+        <!-- Edit form -->
+        <ng-template #content let-modal>
+          <div class="modal-header">
+            <h4 class="modal-title">Edit Details</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+
+
+            <form [formGroup]="registrationForm"  novalidate>
+              <!-- First Name -->
+              <div class="form-group  mt-3">
+                <label for="">Firstname</label>
+                <input [class.is-invalid]="firstName?.invalid && firstName?.touched" formControlName="firstName"
+                  type="text" class="form-control">
+                <div *ngIf="firstName?.invalid && firstName?.touched">
+                  <small *ngIf="firstName?.errors?.['required']" class="text-danger">Firstname is required</small>
+                  <small *ngIf="firstName?.errors?.['minlength']" class="text-danger">Firstname must have atleast 5
+                    characters</small>
+                </div>
+              </div>
+
+              <!-- Last Name -->
+
+              <div class="form-group  mt-3">
+                <label for="">Lastname</label>
+                <input [class.is-invalid]="lastName?.invalid && lastName?.touched" formControlName="lastName"
+                  type="text" class="form-control">
+                <div *ngIf="lastName?.invalid && lastName?.touched">
+                  <small *ngIf="lastName?.errors?.['required']" class="text-danger">Lastname is required</small>
+                  <small *ngIf="lastName?.errors?.['minlength']" class="text-danger">Lastname must have atleast 2
+                    characters</small>
+                  <small *ngIf="lastName?.errors?.['maxlength']" class="text-danger">Lastname must have max 15
+                    characters</small>
+                </div>
+              </div>
+
+              <!-- User Name -->
+              <div class="form-group  mt-3">
+                <label for="">Username</label>
+                <input
+                  [class.is-invalid]="userName?.invalid && userName?.touched || userName?.errors?.['userNameAlreadyUsed']"
+                  formControlName="userName" type="text" class="form-control">
+                <div *ngIf="userName?.invalid && userName?.touched || userName?.errors?.['userNameAlreadyUsed']">
+                  <small *ngIf="userName?.errors?.['required']" class="text-danger">Username is required</small>
+                  <small *ngIf="userName?.errors?.['minlength']" class="text-danger">Username must have atleast
+                    3characters</small>
+                  <small *ngIf="userName?.errors?.['userNameAlreadyUsed']" class="text-danger">User Name is already
+                    used</small>
+                </div>
+              </div>
+
+              <!-- Gender -->
+              <div class="form-group mt-3">
+                <label for="" class="mr-5">Gender</label>
+                <input type="radio" value="Male" formControlName="gender">
+                <label for="" class="radio-label ml-1 mr-5">Male</label>
+                <input type="radio" value="Female" formControlName="gender">
+                <label for="" class="radio-label ml-1 ">Female</label>
+              </div>
+
+              <!-- Email id -->
+
+              <div class="form-group  mt-3">
+                <label for="">Email</label>
+                <input [class.is-invalid]="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']"
+                  type="text" formControlName="email" class="form-control">
+                <div *ngIf="email?.invalid && email?.touched || id?.errors?.['emailIdAlreadyUsed']">
+                  <small class="text-danger" *ngIf="email?.errors?.['required']">Email is required</small>
+                  <small class="text-danger" *ngIf="email?.errors?.['email']">Email is incorrect</small>
+                  <small *ngIf="id?.errors?.['emailIdAlreadyUsed']" class="text-danger">Email Id is already
+                    used</small>
+
+                </div>
+              </div>
+
+              <!-- Password -->
+
+              <div class="form-group  mt-3">
+                <label for="">Password</label>
+                <input
+                  [class.is-invalid]="password?.invalid && password?.touched || password?.errors?.['pattern'] && password?.errors?.['minlength']"
+                  formControlName="password" type="password" class="form-control">
+                <div
+                  *ngIf="password?.invalid && password?.touched || password?.errors?.['pattern'] && password?.errors?.['minlength']">
+                  <small class="text-danger" *ngIf="password?.errors?.['required']">Password is required</small><br>
+                  <small class="text-danger" *ngIf="password?.errors?.['minlength']">Password should have atleast 8
+                    characters</small><br>
+                  <small class="text-danger" *ngIf="password?.errors?.['pattern']">Password should have alteast 1
+                    uppercase,1 lowercase,1numeric and 1 special characters</small>
+                </div>
+
+              </div>
+
+              <!-- Confirm password -->
+
+              <div class="form-group  mt-3">
+                <label for="">Confirm Password</label>
+                <input [class.is-invalid]="registrationForm.errors?.['misMatch']" formControlName="confirmPassword"
+                  type="password" class="form-control">
+                <small class="text-danger" *ngIf="registrationForm.errors?.['misMatch']">Password do not match</small>
+              </div>
+
+              <!-- Submit button -->
+
+              <button [disabled]="!registrationForm.valid" class="btn btn-primary mt-3" type="submit"
+                (click)="modal.close ('Close click')" (click)="updateUsersDetails()" > Edit Details</button>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+          </div>
+        </ng-template>
+        <td><button   class="btn btn-danger pl-3 pr-3 " (click)="onDelete(user.id)"
+            >Delete</button></td>
+            <!-- [disabled]="disableCurrentUser(user.id)" -->
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary" (click)="onLogout() ">Logout</button>
+</div>

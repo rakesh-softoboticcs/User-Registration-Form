@@ -11,7 +11,7 @@ export class UserApiService {
  
   
 
-  private _url = "http://localhost:3000/posts/";
+  private _url = "http://localhost:4000/api/users";
  
   
 
@@ -19,7 +19,7 @@ export class UserApiService {
 
   register(data:any):Observable<any>
   {
-      return this._http.post<any>(this._url,data)
+      return this._http.post<any>('http://localhost:4000/api/users/addUser',data)
       .pipe(map((res:any)=>{
         return res;
       }))
@@ -29,7 +29,7 @@ export class UserApiService {
 
   getUsers():Observable<any>
   {
-    return this._http.get<any>(this._url)
+    return this._http.get<any>(this._url+'/getAllUsers')
     .pipe(map((res:any)=>{
       
       
@@ -39,16 +39,16 @@ export class UserApiService {
     
   }
   
-  // getCurrentUsers(data:any)
-  // {
-  //   return this._http.get<any>(this._url+data)
-  //   .pipe(map((res:any)=>{
+  getCurrentUsers(data:any)
+  {
+    return this._http.post<any>(this._url+'/getUser',data)
+    .pipe(map((res:any)=>{
       
-  //     console.log(res);
-  //     return res;
+      console.log(res);
+      return res;
       
-  //   }))
-  // }
+    }))
+  }
 
 
  
@@ -57,7 +57,7 @@ export class UserApiService {
 
   updateUsers(data:any,id:number):Observable<any>
   {
-    return this._http.put<any>(this._url + id,data)
+    return this._http.put<any>(this._url +'/updateUser/'+ id,data)
       .pipe(map((res:any)=>{
         return res;
       }))
@@ -65,11 +65,18 @@ export class UserApiService {
 
   deleteUser(id:number):Observable<any>
   {
-    return this._http.delete<any>(this._url + id)
+    return this._http.delete<any>(this._url +'/deleteUser/'+ id)
       .pipe(map((res:any)=>{
         return res;
       }))
   }
+
+  // getOneUser():Observable<any>
+  // {
+  //   return this._http.get(this._url+'/getOneUser')
+  //   .pipe(map((res:any)=>console.log(res)
+  //   ))
+  // }
 
   
 }

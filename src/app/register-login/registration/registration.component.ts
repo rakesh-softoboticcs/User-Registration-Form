@@ -59,8 +59,8 @@ export class RegistrationComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.minLength(3),
-            this._customValidation.checkUserNameValidator.bind(this),
+            Validators.minLength(3)
+            // this._customValidation.checkUserNameValidator.bind(this),
           ],
         ],
         gender: [''],
@@ -68,8 +68,8 @@ export class RegistrationComponent implements OnInit {
           '',
           [
             Validators.required,
-            Validators.email,
-            this._customValidation.checkEmailValidator.bind(this),
+            Validators.email
+            // this._customValidation.checkEmailValidator.bind(this),
           ],
         ],
         password: [

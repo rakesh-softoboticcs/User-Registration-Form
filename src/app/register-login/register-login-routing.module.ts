@@ -16,7 +16,7 @@ const routes: Routes = [
   {
     path: 'success-page',
     component: RegisterSuccessComponent,
-    canActivate: [HomepageauthGuard],
+    // canActivate: [HomepageauthGuard],
   },
   {
     path: 'login',

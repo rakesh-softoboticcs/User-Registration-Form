@@ -136,14 +136,15 @@
     </thead>
     <tbody>
 
-      <tr scope="row" *ngFor="let user of userList">
-        <td>{{user.id}}</td>
+      <tr scope="row" *ngFor="let user of userList;let i=index">
+        <td>{{i+1}}</td>
         <td>{{user.firstName | gender:user.gender}}</td>
         <td>{{user.lastName}}</td>
         <td>{{user.userName}}</td>
         <td>{{user.gender}}</td>
         <td>{{user.email}}</td>
         <td>{{user.password}}</td>
+        <td>{{user.confirmPassword}}</td>
         <!-- Edit Button -->
         <td><button class="btn btn-primary pl-3 pr-3" (click)="openVerticallyCentered(content);onEdit(user)"
           > Edit </button></td>
@@ -263,7 +264,7 @@
             <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
           </div>
         </ng-template>
-        <td><button   class="btn btn-danger pl-3 pr-3 " (click)="onDelete(user.id)"
+        <td><button   class="btn btn-danger pl-3 pr-3 " (click)="onDelete(user)"
             >Delete</button></td>
             <!-- [disabled]="disableCurrentUser(user.id)" -->
       </tr>

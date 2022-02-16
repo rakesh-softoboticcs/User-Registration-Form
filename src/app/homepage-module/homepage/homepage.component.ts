@@ -79,9 +79,9 @@ export class HomepageComponent implements OnInit {
             Validators.maxLength(15),
           ],
         ],
-        userName: ['', [Validators.required, Validators.minLength(3),this._customValidation1.checkUserNameValidator.bind(this)]],
+        userName: ['', [Validators.required, Validators.minLength(3)]],
         gender:[''],
-        email: ['', [Validators.required, Validators.email,this._customValidation1.checkEmailValidator.bind(this)]],
+        email: ['', [Validators.required, Validators.email]],
         password: [
           '',
           [
@@ -138,13 +138,14 @@ export class HomepageComponent implements OnInit {
 
     this._userApiService.updateUsers(this.user,this.user.id)
     .subscribe((res:any)=>{
+      
       alert("Updated successfully")
       this.getAllUsers()
     })
   }
   onDelete(data: any) {
     // this._userService.delete(data);
-    this._userApiService.deleteUser(data)
+    this._userApiService.deleteUser(data.id)
     .subscribe((res:any)=>{
       alert("Employee Deleted")
       this.getAllUsers();
@@ -211,7 +212,7 @@ export class HomepageComponent implements OnInit {
 
   getAllUsers()
   {
-    this._userApiService.getUsers().subscribe((data:any)=>this.userList=data);
+    this._userApiService.getUsers().subscribe((res:any)=>this.userList=res);
   }
 
  

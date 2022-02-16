@@ -48,22 +48,19 @@ export class LoginComponent implements OnInit {
     const uName = this.login.get('userName')?.value;
     const pwd = this.login.get('password')?.value;
     
+    const user ={
+      username:uName,
+      password:pwd
+    }
+    // console.log(user);
+    // this._userApiService.getOneUser();
     
 
-    this._userApiService.getUsers()
+    this._userApiService.getCurrentUsers(user)
     .subscribe(( res:any)=>{
      console.log(res);
-     this.user=res;
-     console.log(this.user);
-     
-      
-    let result = this.user.find((value:any)=> {
-       return value.userName===uName && value.password===pwd}
-     )
-     console.log(result);
-    
-
-     if (result) {
+ 
+     if (res) {
       this.router.navigate(['/homepage']);
     } else {
       this.login.setErrors({ unauthenticated: true });
